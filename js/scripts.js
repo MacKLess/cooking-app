@@ -18,22 +18,69 @@ var pintQuart = function(pint) {
 	return pint /2;
 };
 
-var gallons = parseInt(prompt("How many gallons?"));
 
-alert("That equals " + galLiter(gallons) + " in liters.");
 
-var teaspoon = parseInt(prompt("How many teaspoons?"));
+$(document).ready(function(){
+	$("form#gaLt").submit(function(event) {
+		event.preventDefault();
+		var gallons = parseInt($("#galLiter").val());
+		var result = galLiter(gallons);
 
-alert("That equals " + teaTable(teaspoon) + " in tablespoons.");
+		$("#output").text(result);
+	});
 
-var cup1 = parseInt(prompt("How many cups?"));
+	$("form#teTa").submit(function(event) {
+		event.preventDefault();
+		var teaspoon = parseInt($("#teaTable").val());
+		var result = teaTable(teaspoon);
 
-alert("That equals " + cupFluidOunce(cup1) + " in fluid ounces.");
+		$("#output").text(result);
+	});
 
-var cup2 = parseInt(prompt("How many cups?"));
+	$("form#cuFo").submit(function(event) {
+		event.preventDefault();
+		var cup1 = parseInt($("#cupFluidOunce").val());
+		var result = cupFluidOunce(cup1);
 
-alert("That equals " + cupPint(cup2) + " in pints.");
+		$("#output").text(result);
+	});
 
-var pint = parseInt(prompt("How many pints?"));
+	$("form#cuPi").submit(function(event) {
+		event.preventDefault();
+		var cup2 = parseInt($("#cupPint").val());
+		var result = cupPint(cup2);
 
-alert("That equals " + pintQuart(pint) + " in quarts.");
+		$("#output").text(result);
+	});
+
+	$("form#piQu").submit(function(event) {
+		event.preventDefault();
+		var pint = parseInt($("#pintQuart").val());
+		var result = pintQuart(pint);
+
+		$("#output").text(result);
+	});
+
+});
+
+
+
+
+
+// alert("That equals " + galLiter(gallons) + " in liters.");
+
+
+
+// alert("That equals " + teaTable(teaspoon) + " in tablespoons.");
+
+
+
+// alert("That equals " + cupFluidOunce(cup1) + " in fluid ounces.");
+
+
+
+// alert("That equals " + cupPint(cup2) + " in pints.");
+
+
+
+// alert("That equals " + pintQuart(pint) + " in quarts.");
